@@ -1,0 +1,29 @@
+﻿@model IEnumerable<E_Comerce.Models.Metier.Commande>
+
+<table class="table table-bordered table-striped table-responsive">
+    <thead>
+        <tr>
+            <th>Id Commande</th>
+            <th>Id Client</th>
+            <th>Date Commande</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@Html.DisplayFor(modelItem => item.Id_commande)</td>
+                <td>@Html.DisplayFor(modelItem => item.Id_client)</td>
+                <td>@Html.DisplayFor(modelItem => item.Date_commande)</td>
+                <td>
+                    <div class="btn-group" role="group">
+                        <a href="@Url.Action("Details", "Commande", new { id = item.Id_commande })" class="btn btn-default btn-primary">
+                            <i class="bi bi-info-circle-fill"></i> Détails
+                        </a>
+                    </div>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

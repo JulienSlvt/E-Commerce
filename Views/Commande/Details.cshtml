@@ -1,0 +1,47 @@
+﻿@model List<E_Comerce.Models.Metier.CommandeDetails>
+
+@if (Model != null && Model.Any())
+{
+    <div class="container">
+        <h4>Liste des Détails de Commande</h4>
+        <hr />
+
+        @foreach (var item in Model)
+        {
+            <div class="card mb-3">
+                <div class="card-body">
+                    <dl class="row">
+                        <dt class="col-sm-2">
+                            <strong>@Html.DisplayNameFor(model => item.Id_detail)</strong>
+                        </dt>
+                        <dd class="col-sm-10">
+                            @Html.DisplayFor(model => item.Id_detail)
+                        </dd>
+                        <dt class="col-sm-2">
+                            <strong>@Html.DisplayNameFor(model => item.Id_commande)</strong>
+                        </dt>
+                        <dd class="col-sm-10">
+                            @Html.DisplayFor(model => item.Id_commande)
+                        </dd>
+                        <dt class="col-sm-2">
+                            <strong>@Html.DisplayNameFor(model => item.Id_produit)</strong>
+                        </dt>
+                        <dd class="col-sm-10">
+                            @Html.DisplayFor(model => item.Id_produit)
+                        </dd>
+                        <dt class="col-sm-2">
+                            <strong>@Html.DisplayNameFor(model => item.Quantite)</strong>
+                        </dt>
+                        <dd class="col-sm-10">
+                            @Html.DisplayFor(model => item.Quantite)
+                        </dd>
+                    </dl>
+                </div>
+            </div>
+        }
+    </div>
+}
+else
+{
+    <p>Aucun détail disponible.</p>
+}
